@@ -7,5 +7,5 @@ pub struct Notification {
     pub product_type: String,
     pub product_url: String,
     pub subscriber_name: String,
-    pub Status: String
+    pub status: String
 }
