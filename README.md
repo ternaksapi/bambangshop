@@ -65,11 +65,11 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [x] Commit: `Implement unsubscribe function in Notification controller.`
     -   [x] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
-    -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
-    -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
-    -   [ ] Commit: `Implement publish function in Program service and Program controller.`
-    -   [ ] Commit: `Edit Product service methods to call notify after create/delete.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
+    -   [x] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
+    -   [x] Commit: `Implement notify function in Notification service to notify each Subscriber.`
+    -   [x] Commit: `Implement publish function in Program service and Program controller.`
+    -   [x] Commit: `Edit Product service methods to call notify after create/delete.`
+    -   [x] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
 
 ## Your Reflections
 This is the place for you to write reflections:
@@ -104,3 +104,14 @@ The code would be hard to maintain. If we only use the Model for the Program, Su
 Yes, I used it to make request to the app and see the response. I feel like the request sending feature can be the most helpful for the Group Project, especially in making the API design. Other than that, theres also autonmated testing to test the response status code, which could be very useful to see if our project is sending the correct response code.
 
 #### Reflection Publisher-3
+1. Observer Pattern has two variations: Push model (publisher pushes data to subscribers) and Pull model (subscribers pull data from publisher). In this tutorial case, which variation of Observer Pattern that we use?
+In this case, we are using the Push model which can be seen from the notify method where a notification is made and gets pushed to every subscriber object.
+
+
+2. What are the advantages and disadvantages of using the other variation of Observer Pattern for this tutorial case? (example: if you answer Q1 with Push, then imagine if we used Pull)
+
+The advantage with Pull is that the Subscriber will only pull the data only when they need it, saving on resources and unneeded traffic. The disadvantage is that they may get is the increase in complexity since the subscriber has to request to pull everytime they want to get the latest update.
+
+3. Explain what will happen to the program if we decide to not use multi-threading in the notification process.
+Notification will get sent out synchronously, which means it is sent out one-by-one to each subscriber, making the process of sending out notification painfully slow in a large scale.
+
