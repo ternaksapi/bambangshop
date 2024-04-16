@@ -113,5 +113,6 @@ In this case, we are using the Push model which can be seen from the notify meth
 The advantage with Pull is that the Subscriber will only pull the data only when they need it, saving on resources and unneeded traffic. The disadvantage is that they may get is the increase in complexity since the subscriber has to request to pull everytime they want to get the latest update.
 
 3. Explain what will happen to the program if we decide to not use multi-threading in the notification process.
+
 Notification will get sent out synchronously, which means it is sent out one-by-one to each subscriber, making the process of sending out notification painfully slow in a large scale.
 
